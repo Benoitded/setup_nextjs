@@ -15,10 +15,19 @@ import Image from "next/image";
 import styles from "./Header.module.scss";
 
 import FavIcon from "../../app/favicon.ico";
+import { useWeb3Modal } from "@web3modal/wagmi/react";
+import { useAccount, useDisconnect } from "wagmi";
 
 const Header: React.FC = () => {
   const router = useRouter();
+  const { isConnected, address } = useAccount();
+  const { open, close } = useWeb3Modal();
+  const { disconnect } = useDisconnect();
 
+  function handleConnect() {
+    console.log("Connect");
+    open();
+  }
   // Render
   return (
     <header className={styles.header}>
@@ -43,7 +52,15 @@ const Header: React.FC = () => {
           Docs
         </a>
       </div>
-      <div className={styles.connect}>Connect</div>
+      {!isConnected ? (
+        <div className={styles.connect} onClick={handleConnect}>
+          Connect
+        </div>
+      ) : (
+        <div className={styles.connect} onClick={() => disconnect()}>
+          {address?.slice(0, 5) + "..." + address?.slice(-3)}
+        </div>
+      )}
     </header>
   );
 };
