@@ -43,16 +43,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               name="viewport"
               content="width=device-width, initial-scale=1, user-scalable=no"
             />
-            {/* <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@clarifi_it" />
-        <meta
-          name="twitter:title"
-          content="ClariFi, gain clarity in tracking DeFi wallets"
-        />
-        <meta
-          name="twitter:image"
-          content="https://qboizbrjtkumfrvstono.supabase.co/storage/v1/object/public/assets/preview_website.png"
-        /> */}
           </Head>
           <Header />
           <Component {...pageProps} />

@@ -2,13 +2,15 @@
 // import Footer from "./footer";
 import Image from "next/image";
 import { useBlockNumber } from "wagmi";
+import { ViewTransitions } from 'next-view-transitions'
 
 export default function Layout({ children }) {
   const { data, isError, isLoading } = useBlockNumber();
 
   return (
-    <main
-      style={{
+    <ViewTransitions>
+      <main
+        style={{
         width: "calc(100vw - 4px)",
         display: "flex",
         flexDirection: "column",
@@ -16,7 +18,8 @@ export default function Layout({ children }) {
         height: "100%",
       }}
     >
-      {children}
-    </main>
+        {children}
+      </main>
+    </ViewTransitions>
   );
 }

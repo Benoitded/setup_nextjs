@@ -12,8 +12,7 @@ export default function Home() {
       className={styles.App}
       style={{ height: "100%", display: "flex", alignItems: "center" }}
     >
-      <h1>Default project for view</h1>
-      <h2>Change the src/pages/index</h2>
+      <h1>Second page</h1>
     </div>
   );
 }

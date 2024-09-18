@@ -9,7 +9,8 @@ import React, {
 } from "react";
 
 import { useRouter } from "next/router";
-import Link from "next/link";
+// import Link from "next/link";
+import { Link } from 'next-view-transitions'
 import Image from "next/image";
 
 import styles from "./Header.module.scss";
@@ -35,7 +36,7 @@ const Header: React.FC = () => {
         <Image src={FavIcon} height={40} alt="Logo of the project" />
       </Link>
       <div className={styles.menu}>
-        <Link className={styles.itemMenu} href={"/menu-1"}>
+        <Link className={styles.itemMenu} href={"/"}>
           Menu 1
         </Link>
         <Link className={styles.itemMenu} href={"/menu-2"}>
